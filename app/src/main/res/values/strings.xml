@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BodyMassIndex</string>
+    <string name="heightHint">Height</string>
+    <string name="weightHint">Weight</string>
+    <string name="calculateButtonText">Calculate</string>
+    <string name="bodyImageDescription">Body type image</string>
+    <string name="textviewEnterHeight">Enter height in centimeters:</string>
+    <string name="textviewEnterMass">Enter mass in kilograms:</string>
+    <string name="underweight">Underweight</string>
+    <string name="underweightDescription">You are underweight. You should put on some kilograms.</string>
+    <string name="healthy">Healthy</string>
+    <string name="healthyDescription">You are healthy. You should stay in this group.</string>
+    <string name="overweight">Overweight</string>
+    <string name="overweightDescription">You are overweight. You should loose some kilograms.</string>
+    <string name="obese">Obese</string>
+    <string name="obeseDescription">You are obese. You should loose more than a few kilograms.</string>
+</resources>

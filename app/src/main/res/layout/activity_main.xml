@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColour"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/textview_enterHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/basicMarginTop"
+        android:layout_marginStart="@dimen/basicMarginStart"
+        android:text="@string/textviewEnterHeight"/>
+
+    <EditText
+        android:id="@+id/edittext_height"
+        android:layout_below="@id/textview_enterHeight"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/basicMarginTop"
+        android:hint="@string/heightHint"
+        android:textAlignment="center"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/textview_enterWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textviewEnterMass"
+        android:layout_below="@+id/edittext_height"
+        android:layout_marginStart="@dimen/basicMarginStart"
+        android:layout_marginTop="@dimen/basicMarginTop"/>
+
+    <EditText
+        android:id="@+id/edittext_weight"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_enterWeight"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/basicMarginTop"
+        android:hint="@string/weightHint"
+        android:textAlignment="center"
+        android:inputType="numberDecimal"/>
+
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittext_weight"
+        android:layout_marginTop="@dimen/basicMarginTop"
+        android:layout_centerHorizontal="true"
+        android:text="@string/calculateButtonText"/>
+    
+    <ImageView
+        android:id="@+id/imageview_bodyImage"
+        android:layout_width="@dimen/bodyImageWidth"
+        android:layout_height="@dimen/bodyImageHeight"
+        android:layout_below="@id/button_calculate"
+        android:contentDescription="@string/bodyImageDescription"/>
+
+    <TextView
+        android:id="@+id/textview_bodyMassIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_calculate"
+        android:layout_toEndOf="@+id/imageview_bodyImage"
+        android:layout_marginStart="@dimen/marginStart_bodyMassIndex"
+        android:layout_marginTop="@dimen/basicMarginTop"
+        />
+
+    <TextView
+        android:id="@+id/textview_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_bodyMassIndex"
+        android:layout_toEndOf="@id/imageview_bodyImage"
+        android:layout_marginStart="@dimen/basicMarginStart"
+        android:layout_marginTop="@dimen/basicMarginTop"
+        android:textSize="@dimen/statusTextSize"/>
+
+    <TextView
+        android:id="@+id/textview_bodyMassIndex_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_status"
+        android:layout_toEndOf="@id/imageview_bodyImage"
+        android:layout_marginStart="@dimen/marginStart_bmiDesription"
+        android:layout_marginTop="@dimen/basicMarginTop"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="basicMarginTop">10dp</dimen>
+    <dimen name="basicMarginStart">20dp</dimen>
+    <dimen name="marginStart_bodyMassIndex">50dp</dimen>
+    <dimen name="marginStart_bmiDesription">20dp</dimen>
+    <dimen name="bodyImageWidth">150dp</dimen>
+    <dimen name="bodyImageHeight">300dp</dimen>
+    <dimen name="statusTextSize">20sp</dimen>
+</resources>
