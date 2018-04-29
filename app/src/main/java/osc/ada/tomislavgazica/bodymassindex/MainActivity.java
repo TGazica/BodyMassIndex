@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,36 +32,42 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button_calculate)
     public void calculate(View view){
-        Double height = Double.parseDouble(enterHeight.getText().toString());
-        Double weight = Double.parseDouble(enterWeight.getText().toString());
-        Double bmi;
+        double height;
+        double weight;
+        double bmi;
 
-        if(CheckConditions.conditionsMet(height,weight,view)){
-            bmi = weight / ((height/100)*(height/100));
-            bodyMassIndex.setText(bmi.toString());
+        try {
+            height = Double.parseDouble(enterHeight.getText().toString());
+            weight = Double.parseDouble(enterWeight.getText().toString());
 
-            if(bmi<18.5){
-                bodyImage.setImageResource(R.drawable.under_weight);
-                bodyStatus.setText(R.string.underweight);
-                bodyMassIndexDescription.setText(R.string.underweightDescription);
+            if(CheckConditions.conditionsMet(height,weight,view)){
+                bmi = weight / ((height/100)*(height/100));
+                bodyMassIndex.setText(Double.toString(bmi));
+
+                if(bmi<18.5){
+                    bodyImage.setImageResource(R.drawable.under_weight);
+                    bodyStatus.setText(R.string.underweight);
+                    bodyMassIndexDescription.setText(R.string.underweightDescription);
+                }
+                if(bmi>=18.5 && bmi <23){
+                    bodyImage.setImageResource(R.drawable.healthy);
+                    bodyStatus.setText(R.string.healthy);
+                    bodyMassIndexDescription.setText(R.string.healthy);
+                }
+                if(bmi>=23 && bmi <27.5){
+                    bodyImage.setImageResource(R.drawable.over_weight);
+                    bodyStatus.setText(R.string.overweight);
+                    bodyMassIndexDescription.setText(R.string.overweightDescription);
+                }
+                if(bmi>=27.5){
+                    bodyImage.setImageResource(R.drawable.obese);
+                    bodyStatus.setText(R.string.obese);
+                    bodyMassIndexDescription.setText(R.string.obeseDescription);
+                }
             }
-            if(bmi>=18.5 && bmi <23){
-                bodyImage.setImageResource(R.drawable.healthy);
-                bodyStatus.setText(R.string.healthy);
-                bodyMassIndexDescription.setText(R.string.healthy);
-            }
-            if(bmi>=23 && bmi <27.5){
-                bodyImage.setImageResource(R.drawable.over_weight);
-                bodyStatus.setText(R.string.overweight);
-                bodyMassIndexDescription.setText(R.string.overweightDescription);
-            }
-            if(bmi>=27.5){
-                bodyImage.setImageResource(R.drawable.obese);
-                bodyStatus.setText(R.string.obese);
-                bodyMassIndexDescription.setText(R.string.obeseDescription);
-            }
+        }catch (NumberFormatException e){
+            Toast.makeText(this, "Please enter a value", Toast.LENGTH_SHORT).show();
         }
-
     }
 
 }
